@@ -25,8 +25,7 @@ export const site = {
     "end to end rather than following tutorials. The three projects here are the result.",
 
   contact: {
-    // PLACEHOLDER — replace with the address you want on a public site.
-    email: "your.email@example.com",
+    email: "contactfergusbarrie@gmail.com",
     // Deliberately hidden. Add a number here if you want one on the site.
     phone: "",
     linkedin: "https://www.linkedin.com/in/fergusbarrie/",

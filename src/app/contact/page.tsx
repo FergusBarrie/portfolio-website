@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Container, Note } from "@/components/ui";
+import { Container } from "@/components/ui";
 import { site } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -88,24 +88,6 @@ export default function ContactPage() {
           area, and to hybrid or remote arrangements.
         </p>
 
-        <div className="mt-12">
-          <Note title="Note for whoever is setting this site up">
-            <p>
-              The contact details above are placeholders until they are filled in. They
-              live in one file —{" "}
-              <code className="text-[0.8125rem]">src/config/site.ts</code> — so changing
-              them in that one place updates the homepage, the footer and this page at
-              once. Set any entry to an empty string and it disappears from the site
-              instead of showing a placeholder.
-            </p>
-            <p>
-              The CV link expects a file at{" "}
-              <code className="text-[0.8125rem]">public/cv.pdf</code>. Delete this note
-              from <code className="text-[0.8125rem]">src/app/contact/page.tsx</code> once
-              the real details are in.
-            </p>
-          </Note>
-        </div>
       </div>
     </Container>
   );
