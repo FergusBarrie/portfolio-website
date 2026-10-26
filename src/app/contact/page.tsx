@@ -9,6 +9,11 @@ export const metadata: Metadata = {
 
 type Entry = { label: string; value: string; href: string; external?: boolean };
 
+/** Show a profile link as "linkedin.com/in/name" rather than the full URL. */
+function tidyUrl(url: string): string {
+  return url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+}
+
 export default function ContactPage() {
   const entries: Entry[] = [
     site.contact.email && {
@@ -23,13 +28,13 @@ export default function ContactPage() {
     },
     site.contact.linkedin && {
       label: "LinkedIn",
-      value: site.contact.linkedin.replace(/^https?:\/\/(www\.)?/, ""),
+      value: tidyUrl(site.contact.linkedin),
       href: site.contact.linkedin,
       external: true,
     },
     site.contact.github && {
       label: "GitHub",
-      value: site.contact.github.replace(/^https?:\/\/(www\.)?/, ""),
+      value: tidyUrl(site.contact.github),
       href: site.contact.github,
       external: true,
     },

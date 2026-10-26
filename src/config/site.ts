@@ -3,10 +3,9 @@
  *
  * Everything personal lives here so it can be changed in one place.
  *
- * PLACEHOLDERS: the links marked below are placeholders. Replace them with
- * real URLs before deploying. Nothing here is invented beyond the obvious
- * username slots — if you would rather a link did not appear at all, set it to
- * an empty string and the site will leave it out.
+ * Anything still to be filled in carries a trailing comment saying so. Setting
+ * a contact field to an empty string removes it from the site entirely rather
+ * than publishing something half-finished.
  */
 
 export const site = {
@@ -28,20 +27,21 @@ export const site = {
   contact: {
     // PLACEHOLDER — replace with the address you want on a public site.
     email: "your.email@example.com",
-    // PLACEHOLDER — set to "" to hide.
+    // Deliberately hidden. Add a number here if you want one on the site.
     phone: "",
-    linkedin: "https://www.linkedin.com/in/your-profile", // PLACEHOLDER
-    github: "https://github.com/your-username", // PLACEHOLDER
+    linkedin: "https://www.linkedin.com/in/fergusbarrie/",
+    github: "https://github.com/FergusBarrie",
     // Empty by default so the site ships with no broken links. Put your CV at
     // website/public/cv.pdf and set this to "/cv.pdf", or link to it elsewhere.
     cv: "", // PLACEHOLDER
   },
 
-  // GitHub repository for each project. PLACEHOLDERS.
+  // GitHub repository for each project. These names must match the
+  // repositories you create — see the push commands in the root README.
   repos: {
-    ecommerce: "https://github.com/your-username/ecommerce-sales-analysis",
-    financial: "https://github.com/your-username/nike-financial-analysis",
-    retention: "https://github.com/your-username/customer-retention-analysis",
+    ecommerce: "https://github.com/FergusBarrie/ecommerce-sales-analysis",
+    financial: "https://github.com/FergusBarrie/nike-financial-analysis",
+    retention: "https://github.com/FergusBarrie/customer-retention-analysis",
   },
 
   education: [
@@ -49,7 +49,7 @@ export const site = {
       institution: "Reichman University",
       place: "Herzliya, Israel",
       qualification: "BA, double major in Business Administration and Economics",
-      period: "Graduated 2026", // PLACEHOLDER — set your actual graduation year
+      period: "Graduated 2026",
       detail:
         "Coursework included statistics, econometrics, applied economics, business data " +
         "analysis, financial risk management and programming in R.",
