@@ -17,7 +17,7 @@ export const site = {
 
   // Used for page metadata, Open Graph tags and the sitemap. If you rename the
   // project in Vercel or add a custom domain, change this to match.
-  url: "https://portfolio-website-one-henna-62.vercel.app",
+  url: "https://fergus-barrie.vercel.app",
 
   intro:
     "I graduated from Reichman University with a double major in Business Administration " +
