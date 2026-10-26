@@ -1,0 +1,376 @@
+{
+  "meta": {
+    "project": "Does geopolitical risk predict yearly country-level stock market returns?",
+    "venue": "Seminar in Finance, Arison School of Business, Reichman University",
+    "date": "July 2026",
+    "authors": [
+      "Fergus Barrie",
+      "Estherlola Wajsman"
+    ],
+    "supervisor": "Prof. Doron Israeli",
+    "sources": [
+      "Geopolitical Risk Index, Caldara and Iacoviello (2022)",
+      "Country stock market index returns",
+      "World Bank and IMF macro data (inflation, unemployment, GDP)"
+    ],
+    "method": "Two-way fixed effects panel regression with standard errors clustered by country. Geopolitical risk enters in logs, so the interaction measures the effect of a proportional change.",
+    "note": "Regression results are transcribed from the submitted paper. Descriptive charts are calculated from the same workbook and mirror the figures in analysis2.R."
+  },
+  "summary": {
+    "countries": 35,
+    "observations": 873,
+    "first_year": 1991,
+    "last_year": 2021,
+    "with_return": 873,
+    "emerging_obs": 405,
+    "developed_obs": 468,
+    "mean_annual_return_pct": 6.47,
+    "excluded_extremes": 3,
+    "interaction": 0.078,
+    "interaction_t": 2.84,
+    "doubling_gpr_gap_pct": 5.4
+  },
+  "models": [
+    {
+      "model": "Model 1",
+      "spec": "log(GPRC) only",
+      "coef_gprc": 0.002,
+      "t_gprc": 0.122,
+      "interaction": null,
+      "t_interaction": null,
+      "controls": false,
+      "n": 873,
+      "adj_r2": -0.081
+    },
+    {
+      "model": "Model 2",
+      "spec": "plus macro controls",
+      "coef_gprc": 0.003,
+      "t_gprc": 0.171,
+      "interaction": null,
+      "t_interaction": null,
+      "controls": true,
+      "n": 873,
+      "adj_r2": -0.076
+    },
+    {
+      "model": "Model 3",
+      "spec": "plus emerging-market interaction",
+      "coef_gprc": -0.048,
+      "t_gprc": -2.019,
+      "interaction": 0.078,
+      "t_interaction": 2.844,
+      "controls": true,
+      "n": 873,
+      "adj_r2": -0.067
+    }
+  ],
+  "controls": [
+    {
+      "variable": "log(1 + inflation)",
+      "coef": -0.027,
+      "t": -0.756
+    },
+    {
+      "variable": "Unemployment",
+      "coef": 0.003,
+      "t": 0.944
+    },
+    {
+      "variable": "GDP growth",
+      "coef": -0.005,
+      "t": -1.513
+    },
+    {
+      "variable": "log(GDP)",
+      "coef": -0.062,
+      "t": -1.433
+    }
+  ],
+  "group_slopes": [
+    {
+      "group": "Developed markets",
+      "slope": -0.048,
+      "t": -2.019,
+      "reading": "higher geopolitical risk is followed by lower returns"
+    },
+    {
+      "group": "Emerging markets",
+      "slope": 0.03,
+      "t": 1.67,
+      "reading": "positive but not significant at the 5% level"
+    }
+  ],
+  "robustness": [
+    {
+      "check": "Main result (Model 3)",
+      "interaction": 0.078,
+      "t": 2.84,
+      "n": 873
+    },
+    {
+      "check": "Three extreme returns restored",
+      "interaction": 0.069,
+      "t": 2.45,
+      "n": 876
+    },
+    {
+      "check": "Leave one country out (lowest)",
+      "interaction": 0.063,
+      "t": 2.07,
+      "n": 35
+    },
+    {
+      "check": "Leave one country out (highest)",
+      "interaction": 0.088,
+      "t": 3.21,
+      "n": 35
+    },
+    {
+      "check": "Israel counted as emerging pre-2010",
+      "interaction": 0.063,
+      "t": 2.45,
+      "n": 873
+    },
+    {
+      "check": "Changes in GPR instead of levels",
+      "interaction": 0.027,
+      "t": 0.74,
+      "n": 835
+    }
+  ],
+  "gpr_by_year": [
+    {
+      "Year": 1991,
+      "GPR": 149.45
+    },
+    {
+      "Year": 1992,
+      "GPR": 84.02
+    },
+    {
+      "Year": 1993,
+      "GPR": 101.68
+    },
+    {
+      "Year": 1994,
+      "GPR": 99.05
+    },
+    {
+      "Year": 1995,
+      "GPR": 85.54
+    },
+    {
+      "Year": 1996,
+      "GPR": 74.67
+    },
+    {
+      "Year": 1997,
+      "GPR": 50.91
+    },
+    {
+      "Year": 1998,
+      "GPR": 68.47
+    },
+    {
+      "Year": 1999,
+      "GPR": 73.98
+    },
+    {
+      "Year": 2000,
+      "GPR": 57.42
+    },
+    {
+      "Year": 2001,
+      "GPR": 168.83
+    },
+    {
+      "Year": 2002,
+      "GPR": 156.04
+    },
+    {
+      "Year": 2003,
+      "GPR": 176.3
+    },
+    {
+      "Year": 2004,
+      "GPR": 129.4
+    },
+    {
+      "Year": 2005,
+      "GPR": 101.54
+    },
+    {
+      "Year": 2006,
+      "GPR": 104.04
+    },
+    {
+      "Year": 2007,
+      "GPR": 93.74
+    },
+    {
+      "Year": 2008,
+      "GPR": 81.2
+    },
+    {
+      "Year": 2009,
+      "GPR": 83.1
+    },
+    {
+      "Year": 2010,
+      "GPR": 84.17
+    },
+    {
+      "Year": 2011,
+      "GPR": 90.1
+    },
+    {
+      "Year": 2012,
+      "GPR": 81.48
+    },
+    {
+      "Year": 2013,
+      "GPR": 83.04
+    },
+    {
+      "Year": 2014,
+      "GPR": 100.29
+    },
+    {
+      "Year": 2015,
+      "GPR": 105.95
+    },
+    {
+      "Year": 2016,
+      "GPR": 98.68
+    },
+    {
+      "Year": 2017,
+      "GPR": 107.38
+    },
+    {
+      "Year": 2018,
+      "GPR": 98.55
+    },
+    {
+      "Year": 2019,
+      "GPR": 90.95
+    },
+    {
+      "Year": 2020,
+      "GPR": 77.29
+    },
+    {
+      "Year": 2021,
+      "GPR": 82.07
+    }
+  ],
+  "return_by_quartile": [
+    {
+      "quartile": 1,
+      "n": 219,
+      "mean_return_pct": 6.81,
+      "ci_low_pct": 3.03,
+      "ci_high_pct": 10.59
+    },
+    {
+      "quartile": 2,
+      "n": 218,
+      "mean_return_pct": 7.37,
+      "ci_low_pct": 4.24,
+      "ci_high_pct": 10.51
+    },
+    {
+      "quartile": 3,
+      "n": 218,
+      "mean_return_pct": 4.17,
+      "ci_low_pct": 0.65,
+      "ci_high_pct": 7.7
+    },
+    {
+      "quartile": 4,
+      "n": 218,
+      "mean_return_pct": 7.52,
+      "ci_low_pct": 4.48,
+      "ci_high_pct": 10.56
+    }
+  ],
+  "decile_scatter": [
+    {
+      "decile": 1,
+      "log_gprc": -4.036,
+      "mean_return_pct": 6.64,
+      "n": 88
+    },
+    {
+      "decile": 2,
+      "log_gprc": -3.495,
+      "mean_return_pct": 3.62,
+      "n": 87
+    },
+    {
+      "decile": 3,
+      "log_gprc": -3.162,
+      "mean_return_pct": 10.79,
+      "n": 87
+    },
+    {
+      "decile": 4,
+      "log_gprc": -2.845,
+      "mean_return_pct": 7.21,
+      "n": 87
+    },
+    {
+      "decile": 5,
+      "log_gprc": -2.534,
+      "mean_return_pct": 7.19,
+      "n": 88
+    },
+    {
+      "decile": 6,
+      "log_gprc": -2.138,
+      "mean_return_pct": 3.31,
+      "n": 87
+    },
+    {
+      "decile": 7,
+      "log_gprc": -1.775,
+      "mean_return_pct": 2.69,
+      "n": 87
+    },
+    {
+      "decile": 8,
+      "log_gprc": -1.335,
+      "mean_return_pct": 7.61,
+      "n": 87
+    },
+    {
+      "decile": 9,
+      "log_gprc": -0.849,
+      "mean_return_pct": 10.87,
+      "n": 87
+    },
+    {
+      "decile": 10,
+      "log_gprc": 0.178,
+      "mean_return_pct": 4.76,
+      "n": 88
+    }
+  ],
+  "market_groups": [
+    {
+      "group": "Developed",
+      "countries": 19,
+      "observations": 468,
+      "mean_return_pct": 4.75,
+      "mean_gprc": 0.37
+    },
+    {
+      "group": "Emerging",
+      "countries": 16,
+      "observations": 405,
+      "mean_return_pct": 8.45,
+      "mean_gprc": 0.14
+    }
+  ]
+}

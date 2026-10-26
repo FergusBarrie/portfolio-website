@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Project } from "@/config/projects";
-import { Container, Eyebrow, LinkButton, Pill } from "./ui";
+import { Container, Eyebrow, Pill } from "./ui";
 
 /** The shared shell for the three case study pages. */
 export function ProjectHeader({ project }: { project: Project }) {
@@ -19,8 +19,15 @@ export function ProjectHeader({ project }: { project: Project }) {
         <h1 className="mt-3 font-serif text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-[2.5rem]">
           {project.title}
         </h1>
+        <p className="mt-4 text-sm text-muted">{project.context}</p>
+        {project.coAuthors && (
+          <p className="mt-1 text-sm text-muted">
+            Joint work with{" "}
+            <span className="text-body">{project.coAuthors.join(" and ")}</span>
+          </p>
+        )}
         <p className="mt-5 border-l-2 border-accent-soft pl-5 text-base leading-relaxed text-body">
-          <span className="font-medium text-ink">Business question. </span>
+          <span className="font-medium text-ink">The question. </span>
           {project.question}
         </p>
       </div>
@@ -28,7 +35,7 @@ export function ProjectHeader({ project }: { project: Project }) {
       <dl className="mt-10 grid gap-x-10 gap-y-6 border-t border-line pt-7 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <dt className="text-xs font-medium uppercase tracking-[0.12em] text-muted">
-            Tools
+            Methods and tools
           </dt>
           <dd className="mt-2 flex flex-wrap gap-1.5">
             {project.tools.map((t) => (
@@ -44,27 +51,25 @@ export function ProjectHeader({ project }: { project: Project }) {
         </div>
         <div className="sm:col-span-2">
           <dt className="text-xs font-medium uppercase tracking-[0.12em] text-muted">
-            Data source
+            Data
           </dt>
           <dd className="mt-2 text-sm text-body">
-            <a
-              href={project.dataset.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline decoration-line underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
-            >
-              {project.dataset.name}
-            </a>
-            <span className="mt-1 block text-xs text-muted">{project.dataset.note}</span>
+            {project.source.url ? (
+              <a
+                href={project.source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-line underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+              >
+                {project.source.name}
+              </a>
+            ) : (
+              project.source.name
+            )}
+            <span className="mt-1 block text-xs text-muted">{project.source.note}</span>
           </dd>
         </div>
       </dl>
-
-      <div className="mt-8 flex flex-wrap gap-3">
-        <LinkButton href={project.repo} variant="secondary" external>
-          Code and full write-up on GitHub
-        </LinkButton>
-      </div>
     </Container>
   );
 }

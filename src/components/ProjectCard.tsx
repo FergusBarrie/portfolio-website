@@ -28,7 +28,14 @@ export function ProjectCard({
             </Link>
           </h3>
 
-          <p className="mt-2.5 text-sm leading-relaxed text-muted italic">
+          <p className="mt-1.5 text-xs text-muted">
+            {project.context}
+            {project.coAuthors && (
+              <> · with {project.coAuthors.join(" and ")}</>
+            )}
+          </p>
+
+          <p className="mt-3 text-sm leading-relaxed text-muted italic">
             {project.question}
           </p>
 
@@ -60,7 +67,10 @@ export function ProjectCard({
 
           <p className="mt-5 text-sm font-medium text-accent">
             Read the case study{" "}
-            <span aria-hidden="true" className="inline-block transition-transform group-hover:translate-x-0.5">
+            <span
+              aria-hidden="true"
+              className="inline-block transition-transform group-hover:translate-x-0.5"
+            >
               →
             </span>
           </p>

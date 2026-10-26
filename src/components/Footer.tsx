@@ -37,9 +37,8 @@ export function Footer() {
         </div>
 
         <p className="mt-8 max-w-2xl text-xs leading-relaxed text-muted">
-          These are personal learning projects built on public datasets. Every figure on
-          this site is calculated from the data by the code in the linked repositories, and
-          each project lists its own limitations.{" "}
+          Two of these projects are university research papers written with co-authors; the
+          third was built independently. Each one lists its own limitations.{" "}
           <Link href="/about" className="underline underline-offset-2 hover:text-ink">
             More about how they were built
           </Link>

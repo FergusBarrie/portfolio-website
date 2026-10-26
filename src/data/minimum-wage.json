@@ -1,0 +1,420 @@
+{
+  "meta": {
+    "project": "Minimum wage increases and labour market outcomes across U.S. counties",
+    "subtitle": "A county-level panel analysis, 2010-2019",
+    "venue": "Policy Paper, School of Economics, Reichman University",
+    "date": "June 2026",
+    "authors": [
+      "Fergus Barrie",
+      "Tomer Davitasvili"
+    ],
+    "sources": [
+      "BLS Local Area Unemployment Statistics (labour force, unemployment)",
+      "U.S. Department of Labor (state minimum wages)",
+      "U.S. Census Bureau (county population)",
+      "County Business Patterns (low-wage industry share)"
+    ],
+    "method": "Two-way fixed effects panel regression (county and year), extended model adds county-specific time trends. Standard errors clustered at state level. Log-log, so the coefficient on the minimum wage is an elasticity.",
+    "note": "Regression results are transcribed from the submitted paper. Descriptive statistics are calculated from the panel file."
+  },
+  "summary": {
+    "observations": 29076,
+    "counties": 3075,
+    "states": 50,
+    "first_year": 2010,
+    "last_year": 2019,
+    "mean_labour_force": 53401.0,
+    "min_labour_force": 211,
+    "max_labour_force": 5163996,
+    "mean_unemployed": 3300.0,
+    "mean_unemp_rate": 6.25,
+    "mean_real_min_wage": 8.26,
+    "min_real_min_wage": 7.25,
+    "max_real_min_wage": 14.0,
+    "mean_low_wage_share": 0.27,
+    "median_state_change": 0.1,
+    "states_raising": 26
+  },
+  "main_models": [
+    {
+      "model": "Labour force, baseline",
+      "outcome": "ln(labour force)",
+      "coef": 0.0226,
+      "se": 0.0303,
+      "p": 0.46,
+      "trends": false,
+      "within_r2": 0.296
+    },
+    {
+      "model": "Labour force, extended",
+      "outcome": "ln(labour force)",
+      "coef": -0.0085,
+      "se": 0.0324,
+      "p": 0.79,
+      "trends": true,
+      "within_r2": 0.098
+    },
+    {
+      "model": "Unemployment, baseline",
+      "outcome": "ln(unemployed)",
+      "coef": 0.1147,
+      "se": 0.1753,
+      "p": 0.52,
+      "trends": false,
+      "within_r2": 0.013
+    },
+    {
+      "model": "Unemployment, extended",
+      "outcome": "ln(unemployed)",
+      "coef": 0.2294,
+      "se": 0.1766,
+      "p": 0.2,
+      "trends": true,
+      "within_r2": 0.038
+    }
+  ],
+  "robustness": [
+    {
+      "spec": "Baseline",
+      "coef": 0.0226,
+      "se": 0.0303,
+      "n": 29076
+    },
+    {
+      "spec": "Extended (county trends)",
+      "coef": -0.0085,
+      "se": 0.0324,
+      "n": 29076
+    },
+    {
+      "spec": "Balanced panel (8+ years)",
+      "coef": -0.0073,
+      "se": 0.0299,
+      "n": 27432
+    },
+    {
+      "spec": "High min-wage-change states",
+      "coef": 0.0039,
+      "se": 0.0324,
+      "n": 9861
+    },
+    {
+      "spec": "Low min-wage-change states",
+      "coef": -0.0892,
+      "se": 0.0852,
+      "n": 19215
+    }
+  ],
+  "controls": [
+    {
+      "variable": "ln(population)",
+      "lf_baseline": 1.0601,
+      "lf_extended": 1.06,
+      "ue_baseline": 0.4115,
+      "ue_extended": 1.5257,
+      "note": "significant at 0.1% in three of four"
+    },
+    {
+      "variable": "Low-wage industry share",
+      "lf_baseline": -0.1451,
+      "lf_extended": -0.1716,
+      "ue_baseline": 0.1973,
+      "ue_extended": 0.2724,
+      "note": "significant throughout"
+    }
+  ],
+  "by_year": [
+    {
+      "year": 2010,
+      "counties": 2773,
+      "mean_real_min_wage": 8.619,
+      "mean_unemp_rate": 9.456,
+      "total_labour_force": 151346379,
+      "total_unemployed": 14590457,
+      "pct_counties_above_federal": 17.3
+    },
+    {
+      "year": 2011,
+      "counties": 2755,
+      "mean_real_min_wage": 8.364,
+      "mean_unemp_rate": 8.769,
+      "total_labour_force": 151291480,
+      "total_unemployed": 13543026,
+      "pct_counties_above_federal": 19.6
+    },
+    {
+      "year": 2012,
+      "counties": 2753,
+      "mean_real_min_wage": 8.238,
+      "mean_unemp_rate": 7.884,
+      "total_labour_force": 152000849,
+      "total_unemployed": 12259057,
+      "pct_counties_above_federal": 22.4
+    },
+    {
+      "year": 2013,
+      "counties": 2766,
+      "mean_real_min_wage": 8.139,
+      "mean_unemp_rate": 7.4,
+      "total_labour_force": 152502217,
+      "total_unemployed": 11234707,
+      "pct_counties_above_federal": 26.1
+    },
+    {
+      "year": 2014,
+      "counties": 2764,
+      "mean_real_min_wage": 8.093,
+      "mean_unemp_rate": 6.253,
+      "total_labour_force": 153024368,
+      "total_unemployed": 9425467,
+      "pct_counties_above_federal": 27.6
+    },
+    {
+      "year": 2015,
+      "counties": 3046,
+      "mean_real_min_wage": 8.211,
+      "mean_unemp_rate": 5.523,
+      "total_labour_force": 155156191,
+      "total_unemployed": 8182911,
+      "pct_counties_above_federal": 36.7
+    },
+    {
+      "year": 2016,
+      "counties": 3046,
+      "mean_real_min_wage": 8.232,
+      "mean_unemp_rate": 5.274,
+      "total_labour_force": 157054975,
+      "total_unemployed": 7644956,
+      "pct_counties_above_federal": 36.7
+    },
+    {
+      "year": 2017,
+      "counties": 3047,
+      "mean_real_min_wage": 8.217,
+      "mean_unemp_rate": 4.629,
+      "total_labour_force": 158652666,
+      "total_unemployed": 6907723,
+      "pct_counties_above_federal": 42.5
+    },
+    {
+      "year": 2018,
+      "counties": 3063,
+      "mean_real_min_wage": 8.154,
+      "mean_unemp_rate": 4.147,
+      "total_labour_force": 159964555,
+      "total_unemployed": 6230897,
+      "pct_counties_above_federal": 42.4
+    },
+    {
+      "year": 2019,
+      "counties": 3063,
+      "mean_real_min_wage": 8.355,
+      "mean_unemp_rate": 3.989,
+      "total_labour_force": 161707943,
+      "total_unemployed": 5933973,
+      "pct_counties_above_federal": 42.4
+    }
+  ],
+  "state_changes": [
+    {
+      "state": "District of Columbia",
+      "change": 4.33
+    },
+    {
+      "state": "Arizona",
+      "change": 3.5
+    },
+    {
+      "state": "Colorado",
+      "change": 3.5
+    },
+    {
+      "state": "Washington",
+      "change": 3.48
+    },
+    {
+      "state": "Massachusetts",
+      "change": 3.37
+    },
+    {
+      "state": "New York",
+      "change": 3.3
+    },
+    {
+      "state": "Maine",
+      "change": 3.21
+    },
+    {
+      "state": "California",
+      "change": 2.62
+    },
+    {
+      "state": "Maryland",
+      "change": 2.5
+    },
+    {
+      "state": "New Jersey",
+      "change": 2.5
+    },
+    {
+      "state": "Rhode Island",
+      "change": 1.82
+    },
+    {
+      "state": "Hawaii",
+      "change": 1.6
+    },
+    {
+      "state": "Vermont",
+      "change": 1.51
+    },
+    {
+      "state": "Oregon",
+      "change": 1.4
+    },
+    {
+      "state": "Alaska",
+      "change": 1.1
+    },
+    {
+      "state": "Michigan",
+      "change": 0.97
+    },
+    {
+      "state": "Missouri",
+      "change": 0.95
+    },
+    {
+      "state": "South Dakota",
+      "change": 0.8
+    },
+    {
+      "state": "Arkansas",
+      "change": 0.75
+    },
+    {
+      "state": "Delaware",
+      "change": 0.75
+    },
+    {
+      "state": "Nebraska",
+      "change": 0.5
+    },
+    {
+      "state": "West Virginia",
+      "change": 0.25
+    },
+    {
+      "state": "New Mexico",
+      "change": 0.21
+    },
+    {
+      "state": "Montana",
+      "change": 0.15
+    },
+    {
+      "state": "Ohio",
+      "change": 0.14
+    },
+    {
+      "state": "Florida",
+      "change": 0.06
+    },
+    {
+      "state": "Minnesota",
+      "change": -0.35
+    },
+    {
+      "state": "Illinois",
+      "change": -0.42
+    },
+    {
+      "state": "Kansas",
+      "change": -1.25
+    },
+    {
+      "state": "Iowa",
+      "change": -1.25
+    },
+    {
+      "state": "Indiana",
+      "change": -1.25
+    },
+    {
+      "state": "Idaho",
+      "change": -1.25
+    },
+    {
+      "state": "Georgia",
+      "change": -1.25
+    },
+    {
+      "state": "Alabama",
+      "change": -1.25
+    },
+    {
+      "state": "Louisiana",
+      "change": -1.25
+    },
+    {
+      "state": "Kentucky",
+      "change": -1.25
+    },
+    {
+      "state": "North Dakota",
+      "change": -1.25
+    },
+    {
+      "state": "New Hampshire",
+      "change": -1.25
+    },
+    {
+      "state": "Mississippi",
+      "change": -1.25
+    },
+    {
+      "state": "North Carolina",
+      "change": -1.25
+    },
+    {
+      "state": "Nevada",
+      "change": -1.25
+    },
+    {
+      "state": "Pennsylvania",
+      "change": -1.25
+    },
+    {
+      "state": "Tennessee",
+      "change": -1.25
+    },
+    {
+      "state": "South Carolina",
+      "change": -1.25
+    },
+    {
+      "state": "Oklahoma",
+      "change": -1.25
+    },
+    {
+      "state": "Texas",
+      "change": -1.25
+    },
+    {
+      "state": "Virginia",
+      "change": -1.25
+    },
+    {
+      "state": "Utah",
+      "change": -1.25
+    },
+    {
+      "state": "Wisconsin",
+      "change": -1.25
+    },
+    {
+      "state": "Wyoming",
+      "change": -1.25
+    }
+  ]
+}

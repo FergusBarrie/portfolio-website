@@ -6,8 +6,8 @@ import { site } from "@/config/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Economics and business graduate from Reichman University, learning data analysis " +
-    "by working through real public datasets end to end.",
+    "Economics and business graduate from Reichman University, with research experience in " +
+    "panel data analysis and an interest in financial analysis.",
 };
 
 export default function AboutPage() {
@@ -21,57 +21,57 @@ export default function AboutPage() {
         <div className="mt-8 space-y-5 text-[1.0625rem] leading-relaxed text-body">
           <p>
             I studied Business Administration and Economics at Reichman University in
-            Herzliya. The economics half gave me statistics, econometrics and a habit of
-            asking what a number is actually measuring; the business half gave me the
+            Herzliya. The economics half gave me statistics, econometrics and R, and a habit
+            of asking what a number is actually measuring; the business half gave me
             financial statements and the commercial context to put around it.
           </p>
           <p>
-            What my degree did not give me was much practice with real, messy data. Course
-            datasets arrive clean. Real ones have cancelled orders still sitting in the
-            revenue total, a fifth of the rows missing a customer ID, and a column of stock
-            codes where fourteen of them turn out to be postage.
+            The two seminar papers on this site are where that training actually got used. One
+            asks whether minimum wage increases are associated with smaller labour forces or
+            more unemployment across 3,075 US counties. The other asks whether geopolitical
+            risk predicts a country&apos;s stock market return the following year, across 35
+            countries and three decades. Both were written with a co-author, and both are
+            credited as such.
           </p>
           <p>
-            So I set out to fix that by working through three public datasets properly —
-            download, clean, analyse, write up — rather than following tutorials. The goal
-            each time was not to produce an impressive-looking chart but to end up with
-            something I could defend: every figure traceable to a line of code, every
-            cleaning decision logged, and an honest list of what the data cannot tell you.
+            What I took from them was not really the econometrics. It was how much of the work
+            is deciding what you are allowed to claim. Our minimum wage paper found nothing —
+            no significant effect in any of nine specifications. The tempting thing is to keep
+            adjusting the model until something appears. The right thing is to report the null
+            result, explain that it is not the same as proving there is no effect, and be
+            specific about why the data cannot settle the question.
           </p>
           <p>
-            The parts I enjoyed most were the ones where the obvious answer was wrong. In
-            the sales project, revenue had grown year on year — until you noticed the
-            business had actually handled fewer orders and shipped fewer items. In the NIKE
-            analysis, two non-operating lines had “expense” in their names and turned out
-            to be signed as income, which I only found because my bridge to pre-tax profit
-            would not reconcile. Those are the moments where analysis stops being
-            arithmetic.
+            The geopolitical risk paper had the opposite problem. We found a result that was
+            significant at the 1% level, and most of the work went into trying to break it —
+            dropping each country in turn, restoring the observations we had excluded,
+            clustering the errors differently. One of those checks did weaken it, and that is
+            in the paper too.
           </p>
           <p>
-            I am now looking for a first analyst role in {site.location} — data, financial,
-            BI, business or FP&amp;A. I am comfortable in Excel and with the statistics and
-            econometrics I used in my seminar research; I am starting on Power BI, and I do
-            not yet write SQL. I would rather say that plainly than overstate it.
+            The Take-Two analysis I built afterwards, on my own, to practise reading a set of
+            filed accounts. A company that grew revenue 90% while reporting $9.6bn of losses
+            seemed like a good puzzle, and the answer turned out to be one accounting line.
+          </p>
+          <p>
+            I am now looking for a first analyst role in {site.location} — data, financial, BI,
+            business or FP&amp;A. I am comfortable in Excel and with the statistics and
+            econometrics I used in my research; I am starting on Power BI, and I do not yet
+            write SQL. I would rather say that plainly than overstate it.
           </p>
         </div>
 
         <div className="mt-10">
-          <Note title="How these projects were built">
+          <Note title="About the two seminar papers">
             <p>
-              These are learning projects, and I want to be straightforward about that. I
-              used documentation, worked examples and AI tools while building them — the
-              same way most people learn to code now.
+              Both were joint work. The minimum wage paper was written with Tomer Davitasvili,
+              and the geopolitical risk paper with Estherlola Wajsman, supervised by Prof.
+              Doron Israeli. The regression results shown on this site are taken from the
+              papers as submitted.
             </p>
             <p>
-              To be specific about the three projects currently shown: the SQL and Python in
-              them was written with AI assistance, not by me. I am replacing them with my own
-              university research — a county-level panel study of minimum wages and a panel
-              study of geopolitical risk and stock returns, both written as seminar papers at
-              Reichman and both co-authored.
-            </p>
-            <p>
-              I have not claimed professional experience I do not have, and the skills list on
-              the homepage says where each skill comes from.
+              The descriptive charts were produced separately from the same datasets, so the
+              summary figures on each page can be checked against the papers.
             </p>
           </Note>
         </div>
@@ -98,10 +98,10 @@ export default function AboutPage() {
         </h2>
         <div className="mt-5 space-y-4 text-[0.9375rem] leading-relaxed text-body">
           <p>
-            Rebuilding one of these dashboards in Power BI, so I have a version of the same
-            analysis in the tool most job adverts ask for. Beyond that, extracting NIKE&apos;s
-            segment data from the SEC filings — the biggest gap in that project is that I
-            can say profit fell but not which region it fell in.
+            Power BI, because most analyst adverts here ask for it and I have datasets ready to
+            rebuild in it. After that, extending the Take-Two work to the segment detail in the
+            filings — at the moment I can say profit fell but not which part of the business
+            drove it.
           </p>
         </div>
 

@@ -38,13 +38,6 @@ export const site = {
     cv: "", // PLACEHOLDER
   },
 
-  // GitHub repository for each project. These names must match the
-  // repositories you create — see the push commands in the root README.
-  repos: {
-    ecommerce: "https://github.com/FergusBarrie/ecommerce-sales-analysis",
-    financial: "https://github.com/FergusBarrie/nike-financial-analysis",
-    retention: "https://github.com/FergusBarrie/customer-retention-analysis",
-  },
 
   education: [
     {

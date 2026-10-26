@@ -1,5 +1,3 @@
-import { site } from "./site";
-
 export type Project = {
   slug: string;
   title: string;
@@ -7,88 +5,92 @@ export type Project = {
   question: string;
   summary: string;
   tools: string[];
-  dataset: { name: string; url: string; note: string };
+  /** Where the work came from — a university seminar, or built independently. */
+  context: string;
+  /** Named co-authors, shown on the card and the case study page. */
+  coAuthors?: string[];
+  source: { name: string; url?: string; note: string };
   period: string;
-  repo: string;
-  /** Three figures for the project card. */
   highlights: { value: string; label: string }[];
 };
 
 export const projects: Project[] = [
   {
-    slug: "ecommerce-sales",
-    title: "E-commerce Sales Analysis",
-    shortTitle: "E-commerce sales",
+    slug: "minimum-wage",
+    title: "Minimum Wage and County Labour Markets",
+    shortTitle: "Minimum wage",
     question:
-      "Where does this online retailer's revenue actually come from, and how did it " +
-      "change over two years?",
+      "Is a higher minimum wage associated with a smaller labour force or more " +
+      "unemployment across US counties?",
     summary:
-      "I used SQL to work through two years of transactions from a UK online gift " +
-      "retailer — about a million rows — to find out which products, customers and " +
-      "markets the revenue really comes from. The headline answer was not the one the " +
-      "totals suggest: revenue grew, but only because orders got bigger.",
-    tools: ["SQL (SQLite)", "Excel", "Python (pandas)"],
-    dataset: {
-      name: "Online Retail II, UCI Machine Learning Repository",
-      url: "https://archive.ics.uci.edu/dataset/502/online+retail+ii",
-      note: "1,067,371 transaction lines, Dec 2009 – Dec 2011, CC BY 4.0",
+      "A policy paper for the School of Economics at Reichman University, using a panel of " +
+      "3,075 US counties over ten years. The answer turned out to be no — and reporting a " +
+      "null result honestly, rather than hunting for a specification that produced one, is " +
+      "most of what the paper is about.",
+    tools: ["Panel data", "Fixed effects regression", "R", "Excel"],
+    context: "University seminar — Policy Paper, School of Economics, Reichman University, June 2026",
+    coAuthors: ["Tomer Davitasvili"],
+    source: {
+      name: "BLS, US Department of Labor, Census Bureau, County Business Patterns",
+      note: "29,076 county-year observations, 3,075 counties, all 50 states, 2010–2019",
     },
-    period: "December 2009 – December 2011",
-    repo: site.repos.ecommerce,
+    period: "2010–2019",
     highlights: [
-      { value: "£19.1m", label: "Revenue analysed" },
-      { value: "+2.2%", label: "Year-on-year revenue, with orders down 3.8%" },
-      { value: "67.7%", label: "Of revenue from 16.4% of customers" },
+      { value: "29,076", label: "County-year observations across 3,075 counties" },
+      { value: "0.023", label: "Minimum wage elasticity — not statistically significant" },
+      { value: "5 of 5", label: "Specifications agreeing there is no detectable effect" },
     ],
   },
   {
-    slug: "financial-performance",
-    title: "Financial Performance Analysis — NIKE, Inc.",
-    shortTitle: "Financial performance",
+    slug: "geopolitical-risk",
+    title: "Geopolitical Risk and Stock Market Returns",
+    shortTitle: "Geopolitical risk",
     question:
-      "NIKE's revenue peaked in FY2024 and has fallen since. How much of the drop in " +
-      "profit is lower sales, and how much is margins and costs?",
+      "Does a country's geopolitical risk in one year predict its stock market return the " +
+      "next, and is it the same in emerging and developed markets?",
     summary:
-      "I pulled seven years of NIKE's filed accounts straight from the SEC's XBRL API, " +
-      "built a live Excel model from them, and split the fall in operating profit into " +
-      "the three things that caused it. The answer is mostly revenue — but not entirely.",
-    tools: ["Excel", "Python (pandas)", "SEC XBRL API"],
-    dataset: {
-      name: "NIKE 10-K filings via the SEC XBRL company facts API",
-      url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000320187&type=10-K",
-      note: "FY2020 – FY2026 as reported, free and public",
+      "A finance seminar paper covering 35 countries over three decades. Geopolitical risk " +
+      "does not predict a country's own return — but the relationship runs in opposite " +
+      "directions in emerging and developed markets, and that difference survives every " +
+      "robustness check we threw at it.",
+    tools: ["Panel data", "Fixed effects regression", "R", "Excel"],
+    context: "University seminar — Seminar in Finance, Arison School of Business, Reichman University, July 2026",
+    coAuthors: ["Estherlola Wajsman"],
+    source: {
+      name: "Geopolitical Risk Index (Caldara and Iacoviello, 2022), country index returns, World Bank macro data",
+      url: "https://www.matteoiacoviello.com/gpr.htm",
+      note: "873 country-year observations, 35 countries, 1991–2021",
     },
-    period: "FY2020 – FY2026 (year ends 31 May)",
-    repo: site.repos.financial,
+    period: "1991–2021",
     highlights: [
-      { value: "−9.7%", label: "Revenue since the FY2024 peak" },
-      { value: "−39.8%", label: "Operating income over the same period" },
-      { value: "88%", label: "Of the profit fall explained by lower revenue" },
+      { value: "35", label: "Countries tracked over three decades" },
+      { value: "0.078", label: "Emerging-market interaction, significant at 1%" },
+      { value: "36", label: "Robustness regressions run on the main result" },
     ],
   },
   {
-    slug: "customer-retention",
-    title: "Customer Behaviour and Retention Analysis",
-    shortTitle: "Customer retention",
+    slug: "take-two",
+    title: "Take-Two Interactive — Financial Performance",
+    shortTitle: "Take-Two",
     question:
-      "Of the customers this retailer acquired, how many came back, how fast did " +
-      "activity fall away, and what is an acquired customer worth?",
+      "Take-Two's revenue grew about 90% in four years while it reported $9.6bn of losses. " +
+      "How does a company do both at once?",
     summary:
-      "A cohort analysis of 23,570 customers tracked from their first ever purchase for " +
-      "up to 18 months. It answers a question most sales reports cannot: how much of a " +
-      "customer's value arrives after the first order.",
-    tools: ["SQL (SQLite)", "Python (pandas, matplotlib)"],
-    dataset: {
-      name: "CDNOW master dataset, published by Bruce Hardie",
-      url: "https://www.brucehardie.com/datasets/",
-      note: "69,659 transactions, 23,570 customers, Jan 1997 – Jun 1998",
+      "An independent analysis of the company behind Rockstar Games, built in Excel from its " +
+      "filed accounts. Separating one accounting charge from the trading result turns a " +
+      "confusing set of headlines into a straightforward story.",
+    tools: ["Excel", "Financial statement analysis", "SEC filings"],
+    context: "Built independently, outside university",
+    source: {
+      name: "Take-Two 10-K filings via the SEC XBRL company facts API",
+      url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000946581&type=10-K",
+      note: "FY2022–FY2026 as reported, free and public",
     },
-    period: "January 1997 – June 1998",
-    repo: site.repos.retention,
+    period: "FY2022–FY2026 (year ends 31 March)",
     highlights: [
-      { value: "51.1%", label: "Of customers never placed a second order" },
-      { value: "$102.74", label: "Value of an acquired customer over 15 months" },
-      { value: "37.1%", label: "Of that value came from the first order" },
+      { value: "+90%", label: "Revenue growth over the period" },
+      { value: "$9.6bn", label: "Cumulative losses reported" },
+      { value: "61%", label: "Of those losses were goodwill write-downs" },
     ],
   },
 ];
