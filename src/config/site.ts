@@ -15,8 +15,9 @@ export const site = {
   tagline: "Aspiring Data & Financial Analyst",
   location: "Israel",
 
-  // Used for metadata and the sitemap. Change after the first deploy.
-  url: "https://fergusbarrie.vercel.app", // PLACEHOLDER
+  // Used for page metadata, Open Graph tags and the sitemap. If you rename the
+  // project in Vercel or add a custom domain, change this to match.
+  url: "https://portfolio-website-one-henna-62.vercel.app",
 
   intro:
     "I graduated from Reichman University with a double major in Business Administration " +
