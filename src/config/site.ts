@@ -32,9 +32,9 @@ export const site = {
     phone: "",
     linkedin: "https://www.linkedin.com/in/your-profile", // PLACEHOLDER
     github: "https://github.com/your-username", // PLACEHOLDER
-    // Put your CV at website/public/cv.pdf, or link to it elsewhere.
-    // Set to "" to hide the link until the file exists.
-    cv: "/cv.pdf", // PLACEHOLDER
+    // Empty by default so the site ships with no broken links. Put your CV at
+    // website/public/cv.pdf and set this to "/cv.pdf", or link to it elsewhere.
+    cv: "", // PLACEHOLDER
   },
 
   // GitHub repository for each project. PLACEHOLDERS.
