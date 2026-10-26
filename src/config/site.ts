@@ -22,9 +22,10 @@ export const site = {
 
   intro:
     "I graduated from Reichman University with a double major in Business Administration " +
-    "and Economics. Since then I have been teaching myself the practical side of data " +
-    "analysis — SQL, Excel modelling and Python — by working through real public datasets " +
-    "end to end rather than following tutorials. The three projects here are the result.",
+    "and Economics. My degree covered statistics, econometrics and R, and I put them to work " +
+    "in two seminar research projects built on real panel data — one on minimum wages across " +
+    "US counties, one on geopolitical risk and stock returns. I am now building on that with " +
+    "Excel modelling and company financial analysis.",
 
   contact: {
     email: "contactfergusbarrie@gmail.com",
@@ -68,31 +69,30 @@ export const site = {
     {
       group: "Data & analysis",
       items: [
-        { name: "SQL (SQLite, joins, CTEs, window functions)", level: "Comfortable" },
-        { name: "Excel (formulas, pivot tables, charts, simple models)", level: "Comfortable" },
-        { name: "Data cleaning and preparation", level: "Comfortable" },
-        { name: "Exploratory analysis and descriptive statistics", level: "Comfortable" },
-        { name: "Python (pandas, matplotlib)", level: "Learning" },
-        { name: "R", level: "Learning — used during my degree" },
-        { name: "Power BI", level: "Learning" },
+        { name: "Excel (formulas, pivot tables, charts)", level: "Comfortable" },
+        { name: "Descriptive statistics", level: "Comfortable" },
+        { name: "Panel data and regression analysis", level: "Applied in my seminar research" },
+        { name: "Data cleaning and preparation", level: "Applied in my seminar research" },
+        { name: "R", level: "Used for my seminar research — still building fluency" },
+        { name: "Power BI", level: "Starting to learn" },
       ],
     },
     {
       group: "Finance & economics",
       items: [
-        { name: "Financial statement analysis", level: "Comfortable" },
-        { name: "Ratio analysis and margin bridges", level: "Comfortable" },
-        { name: "Scenario forecasting with stated assumptions", level: "Comfortable" },
-        { name: "Econometrics", level: "Studied at university" },
+        { name: "Econometrics", level: "Studied, and applied in two seminar papers" },
+        { name: "Applied economics", level: "Studied at university" },
+        { name: "Financial statement analysis", level: "Studied at university" },
         { name: "Financial risk management", level: "Studied at university" },
       ],
     },
     {
       group: "Working practice",
       items: [
-        { name: "Reproducible analysis (scripts, not manual steps)", level: "Comfortable" },
+        { name: "Research design and academic writing", level: "Comfortable" },
         { name: "Documenting assumptions and limitations", level: "Comfortable" },
-        { name: "Git and GitHub", level: "Learning" },
+        { name: "Working on joint research projects", level: "Comfortable" },
+        { name: "Git and GitHub", level: "Starting to learn" },
       ],
     },
   ],

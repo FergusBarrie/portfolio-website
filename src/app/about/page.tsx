@@ -49,9 +49,9 @@ export default function AboutPage() {
           </p>
           <p>
             I am now looking for a first analyst role in {site.location} — data, financial,
-            BI, business or FP&amp;A. I am comfortable with SQL and Excel, I am still
-            building my Python and Power BI, and I would rather say that plainly than
-            overstate it.
+            BI, business or FP&amp;A. I am comfortable in Excel and with the statistics and
+            econometrics I used in my seminar research; I am starting on Power BI, and I do
+            not yet write SQL. I would rather say that plainly than overstate it.
           </p>
         </div>
 
@@ -68,6 +68,13 @@ export default function AboutPage() {
               calculation and every judgement call, including the mistakes I made and had
               to fix. I am happy to open any repository in an interview and talk through
               it line by line, or to reproduce a piece of the analysis from scratch.
+            </p>
+            <p>
+              To be specific about the three projects currently shown: the SQL and Python in
+              them was written with AI assistance, not by me. I am in the middle of replacing
+              them with my own university research — a county-level panel study of minimum
+              wages and a panel study of geopolitical risk and stock returns — which is work
+              I did myself and can defend in full.
             </p>
             <p>
               I have not claimed professional experience I do not have, and the skills list
