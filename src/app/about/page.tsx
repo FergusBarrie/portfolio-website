@@ -63,22 +63,15 @@ export default function AboutPage() {
               same way most people learn to code now.
             </p>
             <p>
-              What matters is that I understand and can defend every part of what is here.
-              Each project ships a learning guide that walks through every query, every
-              calculation and every judgement call, including the mistakes I made and had
-              to fix. I am happy to open any repository in an interview and talk through
-              it line by line, or to reproduce a piece of the analysis from scratch.
-            </p>
-            <p>
               To be specific about the three projects currently shown: the SQL and Python in
-              them was written with AI assistance, not by me. I am in the middle of replacing
-              them with my own university research — a county-level panel study of minimum
-              wages and a panel study of geopolitical risk and stock returns — which is work
-              I did myself and can defend in full.
+              them was written with AI assistance, not by me. I am replacing them with my own
+              university research — a county-level panel study of minimum wages and a panel
+              study of geopolitical risk and stock returns, both written as seminar papers at
+              Reichman and both co-authored.
             </p>
             <p>
-              I have not claimed professional experience I do not have, and the skills list
-              on the homepage marks what I am still learning as exactly that.
+              I have not claimed professional experience I do not have, and the skills list on
+              the homepage says where each skill comes from.
             </p>
           </Note>
         </div>
