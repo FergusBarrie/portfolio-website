@@ -9,7 +9,8 @@
  */
 
 export const site = {
-  name: "Fergus James Barrie",
+  // name is used for headings and page titles, shortName for the nav and footer.
+  name: "Fergus Barrie",
   shortName: "Fergus Barrie",
   role: "Economics & Business Graduate",
   tagline: "Aspiring Data & Financial Analyst",

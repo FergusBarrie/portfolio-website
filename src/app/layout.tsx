@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -56,6 +57,13 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        {/*
+          Vercel Web Analytics: page views and referrers, no cookies and no
+          personal data, so the site needs no cookie banner. It only sends
+          anything on a Vercel deployment with Analytics enabled in the
+          dashboard — locally it is a no-op.
+        */}
+        <Analytics />
       </body>
     </html>
   );

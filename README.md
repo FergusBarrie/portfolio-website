@@ -1,4 +1,4 @@
-# Portfolio website — Fergus James Barrie
+# Portfolio website — Fergus Barrie
 
 A small Next.js site showing three data analysis projects. Built with Next.js (App Router),
 TypeScript, Tailwind CSS v4 and Recharts, and deployed on Vercel.
