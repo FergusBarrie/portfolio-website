@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/*
+  A small, deliberate set of design tokens. Everything on the site uses these,
+  which is what keeps the pages looking like one thing rather than several.
+*/
+@theme {
+  --color-paper: #fbfaf8; /* page background, warm off-white */
+  --color-surface: #ffffff; /* cards */
+  --color-line: #e5e2dc; /* hairline borders */
+  --color-line-soft: #efedea;
+
+  --color-ink: #1b2a41; /* headings, navy */
+  --color-body: #3f4c5c; /* body text, charcoal */
+  --color-muted: #6c7a8a; /* captions, labels */
+
+  --color-accent: #2e4a72; /* muted blue, primary accent */
+  --color-accent-soft: #8fa6c4; /* secondary chart series */
+  --color-clay: #b4663a; /* single warm accent, used sparingly */
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif-display), ui-serif, Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Keyboard focus that is visible without being loud. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: #d7e0ec;
+  color: var(--color-ink);
+}
+
+/* Tabular figures in data tables, so columns of numbers line up. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
