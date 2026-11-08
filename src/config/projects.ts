@@ -68,31 +68,6 @@ export const projects: Project[] = [
       { value: "36", label: "Robustness regressions run on the main result" },
     ],
   },
-  {
-    slug: "take-two",
-    title: "Take-Two Interactive — Financial Performance",
-    shortTitle: "Take-Two",
-    question:
-      "Take-Two's revenue grew about 90% in four years while it reported $9.6bn of losses. " +
-      "How does a company do both at once?",
-    summary:
-      "An independent analysis of the company behind Rockstar Games, built in Excel from its " +
-      "filed accounts. Separating one accounting charge from the trading result turns a " +
-      "confusing set of headlines into a straightforward story.",
-    tools: ["Excel", "Financial statement analysis", "SEC filings"],
-    context: "Built independently, outside university",
-    source: {
-      name: "Take-Two 10-K filings via the SEC XBRL company facts API",
-      url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000946581&type=10-K",
-      note: "FY2022–FY2026 as reported, free and public",
-    },
-    period: "FY2022–FY2026 (year ends 31 March)",
-    highlights: [
-      { value: "+90%", label: "Revenue growth over the period" },
-      { value: "$9.6bn", label: "Cumulative losses reported" },
-      { value: "61%", label: "Of those losses were goodwill write-downs" },
-    ],
-  },
 ];
 
 export function getProject(slug: string): Project {

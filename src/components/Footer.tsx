@@ -37,8 +37,8 @@ export function Footer() {
         </div>
 
         <p className="mt-8 max-w-2xl text-xs leading-relaxed text-muted">
-          Two of these projects are university research papers written with co-authors; the
-          third was built independently. Each one lists its own limitations.{" "}
+          Both projects are university research papers written with co-authors. Each one
+          lists its own limitations.{" "}
           <Link href="/about" className="underline underline-offset-2 hover:text-ink">
             More about how they were built
           </Link>

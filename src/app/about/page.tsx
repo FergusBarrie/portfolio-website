@@ -49,11 +49,6 @@ export default function AboutPage() {
             in the paper too.
           </p>
           <p>
-            The Take-Two analysis I built afterwards, on my own, to practise reading a set of
-            filed accounts. A company that grew revenue 90% while reporting $9.6bn of losses
-            seemed like a good puzzle, and the answer turned out to be one accounting line.
-          </p>
-          <p>
             I am now looking for a first analyst role in {site.location} — data, financial, BI,
             business or FP&amp;A. I am comfortable in Excel and with the statistics and
             econometrics I used in my research; I am starting on Power BI, and I do not yet
@@ -98,10 +93,10 @@ export default function AboutPage() {
         </h2>
         <div className="mt-5 space-y-4 text-[0.9375rem] leading-relaxed text-body">
           <p>
-            Power BI, because most analyst adverts here ask for it and I have datasets ready to
-            rebuild in it. After that, extending the Take-Two work to the segment detail in the
-            filings — at the moment I can say profit fell but not which part of the business
-            drove it.
+            Power BI, because most analyst adverts here ask for it and I have two datasets
+            ready to rebuild in it. After that, going back through the R behind the
+            geopolitical risk paper properly, so I can work with panel models without leaning
+            on what a supervisor set up.
           </p>
         </div>
 
